@@ -1,5 +1,7 @@
 git init
 git add .
 git status
-git commit -m "Push  archive of shoperiz"
+echo "Insert message "
+read $dataMessage 
+git commit -m " + $dataMessage + "
 git push -f https://github.com/digitalprimeint/shoperiz-web.git master

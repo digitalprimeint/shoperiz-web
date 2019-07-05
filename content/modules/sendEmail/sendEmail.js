@@ -7,7 +7,7 @@ const path = require('path');
 router.post('/send-email', function (req, res) {
   var body = req.body;
   let email = body.email
-  let name = body.name
+  let name = body.name   
   let hasAutenticate = body.hasAutenticate
   async function main() {
     let transporter = nodemailer.createTransport({
