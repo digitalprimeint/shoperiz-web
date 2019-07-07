@@ -1,76 +1,88 @@
 <!DOCTYPE html>
-<html>
+<div>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Dashboard - Brand</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
 
-<body>
-  <div class="d-flex flex-column mt-2" id="content-wrapper">
-    <div id="content">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-primary py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Crear Productos</span>
+  <body>
+    <div class="d-flex flex-column mt-2" id="content-wrapper">
+
+      <!-- Option content -->
+      <div id="content">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-xl-3 mb-4" id="create-P">
+              <div class="card shadow border-left-primary py-2">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                      <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Crear
+                          Productos</span>
+                      </div>
+                      <div class="text-dark font-weight-bold h5 mb-0"></div>
                     </div>
-                    <div class="text-dark font-weight-bold h5 mb-0"></div>
+                    <div class="col-auto"><i class="far fa-window-restore fa-2x text-gray-300"></i></div>
                   </div>
-                  <div class="col-auto"><i class="far fa-window-restore fa-2x text-gray-300"></i></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4" id="list-P">
-            <div class="card shadow border-left-success py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>ver lista de
-                        productos</span></div>
-                    <div class="text-dark font-weight-bold h5 mb-0"></div>
+            <div class="col-lg-6 col-xl-3 mb-4" id="list-P">
+              <div class="card shadow border-left-success py-2">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                      <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Administrar
+                          Productos</span></div>
+                      <div class="text-dark font-weight-bold h5 mb-0"></div>
+                    </div>
+                    <div class="col-auto"><i class="far fa-list-alt fa-2x text-gray-300"></i></div>
                   </div>
-                  <div class="col-auto"><i class="far fa-list-alt fa-2x text-gray-300"></i></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-info py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>ver reporte de los
-                        productos</span></div>
+            <div class="col-lg-6 col-xl-3 mb-4" id="report-P">
+              <div class="card shadow border-left-info py-2">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                      <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>ver reporte de los
+                          productos</span></div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
                   </div>
-                  <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="list-product">
+      </div>
+
+      <!-- Product list -->
+      <div id="list-product">
+        <div class="card-header">
+          <div class="row">
+            <div class="col" id="list-product-close"> <i class="fas fa-exchange-alt font-size-icon"></i></div>
+          </div>
+        </div>
+        <div class="container mt-3">
           <div class="row d-flex justify-content-center">
-            <div class="col">
+            <div class="col-lg-12">
               <div class="card shadow mb-4">
                 <div class="card-header">
                   <div class="row">
                     <div class="col">
                       <h6 class="text-success font-weight-bold m-0">Lista de Peoductos &nbsp; shoperiz</h6>
                     </div>
-                    <div class="col" id="list-product-close"><i class="fa fa-window-close float-right"></i></div>
                   </div>
                 </div>
                 <ul class="list-group">
@@ -81,13 +93,8 @@
                       </div>
                       <div class="col text-break">
                         <div class="mt-3">
-                          <div class="btn-group float-right"><button class="btn btn-success"
-                              type="button">Privado</button><button
-                              class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                              aria-expanded="false" type="button"></button>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
-                                href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second
-                                Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                          <div class="btn-group float-right"><button class="btn btn-success" type="button">Ver
+                              estado</button>
                           </div>
                         </div>
                       </div>
@@ -96,7 +103,8 @@
                 </ul>
               </div>
             </div>
-          </div> <!-- Modal -->
+          </div>
+          <!-- Modal product detail -->
           <div class="modal-box2">
             <div class="modal fade" id="status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
@@ -108,7 +116,6 @@
                       <h5 class="text-center">Estado del Producto</h5>
                     </div>
                     <div class="row d-flex justify-content-center">
-
                     </div>
                   </div>
                 </div>
@@ -117,11 +124,48 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/Dashboard.js"></script>
-</body>
 
-</html>
+      <!-- Option of  create product -->
+      <div id="create-product">
+        <div class="card-header">
+          <div class="row">
+            <div class="col" id="create-product-close"> <i class="fas fa-exchange-alt font-size-icon"></i> <h5 class="text-center text-dark "> Elije tu template favorito </h5></div>
+          </div>
+        </div>
+        <!-- list Template -->
+     <div class="container">
+       <div class="row d-flex justify-content-center">
+         <div class="col-lg-4" id="check-template-1" onclick="selectTemplate(this.id)">
+            <div class="card shadow card-1 mt-3">
+                <img class="card-img-top" src="./assets/images/template.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Template #1</h5>
+                <i id="icon-1" class="fas fa-check-circle text-dark float-right font-size-icon"></i>
+                </div>
+              </div>
+         </div>
+         <div class="col-lg-4" id="check-template-2" onclick="selectTemplate(this.id)">
+            <div class="card shadow card-1 mt-3">
+                <img class="card-img-top" src="./assets/images/template.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Template #2</h5>
+                  <!-- <p class="card-text"><small class="text-muted">shoperiz</small></p> -->
+                  <i id="icon-2" class="fas fa-check-circle text-dark float-right font-size-icon"></i>
+                </div>
+              </div>
+         </div>
+         
+       </div>
+     </div>
+      </div>
+
+      <!-- Option report products  -->
+      <div id="report-products">
+      </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Dashboard.js"></script>
+  </body>
+
+</div>

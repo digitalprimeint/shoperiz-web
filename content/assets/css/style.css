@@ -78,7 +78,7 @@
 }
 
 .modal-box2 .modal-dialog .modal-content .modal-body .icon {
-  color: #26de81;
+  color: #306B2D;
   font-size: 36px;
   text-align: center;
   text-shadow: 4px 0 0 #fff,0 -3px 0 #fff;
@@ -119,7 +119,7 @@
 
 .modal-box2 .modal-dialog .modal-content .modal-body .subscribe {
   color: #fff;
-  background-color: #26de81;
+  background-color: #306B2D;
   font-size: 18px;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -149,3 +149,12 @@
   }
 }
 
+/* font size icon */
+.font-size-icon{
+font-size: 30px;
+}
+
+/*card */
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
