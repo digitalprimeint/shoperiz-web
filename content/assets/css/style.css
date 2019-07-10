@@ -365,3 +365,6 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 /* modal  */
+.list-style{
+  text-decoration: none !important;
+}

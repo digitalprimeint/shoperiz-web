@@ -1,26 +1,11 @@
-// List of Product 
-function initialHide() {
-  $("#list-product").hide();
-  $("#container-list-template").hide();
-  $('#report-products').hide();
-  $('#add-data-product').hide();
-  $("#btn-template-1").hide();
-  $("#btn-template-2").hide();
-}
-
-// list product 
-$("#list-P").on('click', function () {
-  $('#list-product').toggle();
-  $("#container-list-template").hide();
-
-});
-
-// create Product 
-$("#create-P").on('click', function () {
-  $('#list-product').hide();
-  $("#container-list-template").toggle();
-});
-
+$("#btn-template-1").hide();
+$("#btn-template-2").hide();
+$('#create-P').on('click',function (){
+  location.href="/#products/option-template"
+})
+$('#list-P').on('click',function (){
+  location.href="/#products/list-product"
+})
 function selectTemplate(op) {
   switch (op) {
     case 'check-template-1':
@@ -42,10 +27,6 @@ function AddDataTemplated(op) {
   }
 }
 
-function OtherTemplate(op) {
-  displayTemplate(op)
-}
-
 // materials input 
 function checkValue(element) {
   if ($(element).val())
@@ -62,8 +43,6 @@ $(document).ready(function () {
     checkValue(this);
   });
 });
-
-
 
 // check templated One 
 function checkTempleteOne() {
@@ -93,4 +72,5 @@ function displayTemplate(op) {
     $('#icon-2').removeClass('text-success').addClass("text-dark");
   }
 }
-initialHide();
+
+

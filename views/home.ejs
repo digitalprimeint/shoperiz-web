@@ -20,6 +20,9 @@
   <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- production version, optimized for size and speed
     <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="https://shoperiz.plugdo.com/js/routing.js"></script>
+  <!-- <script src="assets/js/Dashboard.js"></script> -->
+  <!-- <script src="assets/js/UploadImages.js"></script> -->
 </head>
 
 <body>
@@ -51,18 +54,20 @@
   </div>
   <div id="container" class="container"></div>
   <plugdo-modal name="modal-container" src="/component/modal"></plugdo-modal>
-  <script src="https://shoperiz.plugdo.com/js/routing.js"></script>
-  <script src="assets/js/Dashboard.js"></script>
-  <script src="assets/js/UploadImages.js"></script>
   <script>
-    let { view } = plugdo;
+    let {
+      view
+    } = plugdo;
 
     $(document).ready(function () {
       view.load();
 
-      if (window.location.hash.indexOf("/") != -1) {
-        view.components.handler.sleep(2000);
+      function windowLocationHash() {
+        if (window.location.hash.indexOf("/") != -1) {
+          view.components.handler.sleep(1000);
+        }
       }
+
 
       window.routing = new PlugdoRouting({
         el: '#container',
@@ -76,11 +81,21 @@
                 </div>`
       });
 
-      routing.register({ name: "products", page: "/product", classInParent: true });
-      routing.register({ name: "data", page: "/template-data", classInParent: false });
-      routing.register({ name: "banks", page: "/secure/banks", classInParent: true });
-      routing.register({ name: "profile", page: "/secure/profile", classInParent: true });
-
+      routing.register({
+        name: "products",
+        page: "/product",
+        classInParent: true
+      });
+      routing.register({
+        name: "banks",
+        page: "/secure/banks",
+        classInParent: true
+      });
+      routing.register({
+        name: "profile",
+        page: "/secure/profile",
+        classInParent: true
+      });
 
       routing.register({
         name: "products/template-data",
@@ -90,9 +105,27 @@
         }
       });
 
-      routing.modal();
-    });
+      routing.register({
+        name: "products/option-template",
+        page: "/option-template",
+        postLoad: function () {
+          $("#plugdo-modal-component").show();
+        }
+      });
 
+
+      routing.register({
+        name: "products/list-product",
+        page: "/list-product",
+        postLoad: function () {
+          $("#plugdo-modal-component").show();
+        }
+      });
+
+
+      routing.modal();
+      windowLocationHash()
+    });
   </script>
 </body>
 
