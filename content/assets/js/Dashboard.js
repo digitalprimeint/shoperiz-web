@@ -1,36 +1,24 @@
 // List of Product 
 function initialHide() {
   $("#list-product").hide();
-  $('#create-product').hide();
+  $("#container-list-template").hide();
   $('#report-products').hide();
   $('#add-data-product').hide();
-  $('#content-Web-option').removeClass("display");
-}
-
-function contentshow() {
-  $('#content').show();
+  $("#btn-template-1").hide();
+  $("#btn-template-2").hide();
 }
 
 // list product 
 $("#list-P").on('click', function () {
   $('#list-product').toggle();
-  $('#content').hide();
-});
+  $("#container-list-template").hide();
 
-$("#list-product-close").on('click', function () {
-  initialHide();
-  contentshow();
 });
 
 // create Product 
 $("#create-P").on('click', function () {
-  $('#create-product').toggle();
-  $('#content').hide();
-});
-
-$("#create-product-close").on('click', function () {
-  initialHide();
-  contentshow();
+  $('#list-product').hide();
+  $("#container-list-template").toggle();
 });
 
 function selectTemplate(op) {
@@ -53,6 +41,7 @@ function AddDataTemplated(op) {
     displayTemplate(true)
   }
 }
+
 function OtherTemplate(op) {
   displayTemplate(op)
 }
@@ -64,6 +53,7 @@ function checkValue(element) {
   else
     $(element).removeClass('has-value');
 }
+
 $(document).ready(function () {
   $('.form-control').each(function () {
     checkValue(this);
@@ -71,7 +61,6 @@ $(document).ready(function () {
   $('.form-control').blur(function () {
     checkValue(this);
   });
-
 });
 
 
@@ -80,16 +69,18 @@ $(document).ready(function () {
 function checkTempleteOne() {
   $('#icon-2').removeClass("text-success").addClass('text-dark');
   $('#icon-1').removeClass('text-dark').addClass("text-success");
-  $("#btn-template-2").prop('disabled', true);
-  $("#btn-template-1").prop('disabled', false);
+  $("#btn-template-1").show();
+  $("#btn-template-2").hide();
 }
+
 // check templated Two 
 function ckeckTemplateTwo() {
   $('#icon-1').removeClass('text-success').addClass("text-dark");
   $('#icon-2').removeClass('text-dark').addClass("text-success");
-  $("#btn-template-1").prop('disabled', true);
-  $("#btn-template-2").prop('disabled', false);
+  $("#btn-template-1").hide();
+  $("#btn-template-2").show();
 }
+
 function displayTemplate(op) {
   if (op === true) {
     $("#check-template-2").addClass('display');
@@ -100,11 +91,6 @@ function displayTemplate(op) {
     $('#add-data-product').hide();
     $('#icon-1').removeClass('text-success').addClass("text-dark");
     $('#icon-2').removeClass('text-success').addClass("text-dark");
-    $("#btn-template-1").prop('disabled', true);
-    $("#btn-template-2").prop('disabled', true);
-    // $('#create-product').toggle();
-    // $('#content').hide();
   }
 }
-
 initialHide();

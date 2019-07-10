@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shoperiz</title>
+  <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link
+    href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Fjalla+One|Russo+One|Cuprum|Hammersmith+One|Mukta&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://shoperiz.plugdo.com/css/site.css">
+  <script src="//cdn.plugdo.com/js/plugdo-dependency.min.js"></script>
+  <script src="//cdn.plugdo.com/js/plugdoeui.latest.min.js"></script>
+  <!-- development version, includes helpful console warnings -->
+  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- production version, optimized for size and speed
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+
+<body>
+  <div class="container-fluid color-title-logo">
+    <div class="container color-title-logo">
+      <div class="row">
+        <div class="col col-lg-6 logo align-items-center">
+          <h1>shoperiz <span>by plugdo&trade;</span></h1>
+        </div>
+        <div class="col col-lg-6 align-items-center justify-content-end">
+          <i class="fas fa-bell top-icon"></i> <i class="fas fa-cog top-icon"></i> <i
+            class="fas fa-sign-out-alt top-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid color-title">
+    <div class="row justify-content-md-center">
+      <div class="col col-sm-2 text-center menu-title">
+        <a href="/#products"><i class="fas fa-boxes"></i> <br />Productos</a>
+      </div>
+      <div class="col col-sm-2 text-center menu-title">
+        <a href="/#banks"><i class="far fa-credit-card"></i> <br />Bancos</a>
+      </div>
+      <div class="col col-sm-2 text-center menu-title">
+        <a href="/#profile"><i class="fas fa-address-card"></i> <br />Perfil</a>
+      </div>
+    </div>
+  </div>
+  <div id="container" class="container"></div>
+  <plugdo-modal name="modal-container" src="/component/modal"></plugdo-modal>
+  <script src="https://shoperiz.plugdo.com/js/routing.js"></script>
+  <script src="assets/js/Dashboard.js"></script>
+  <script src="assets/js/UploadImages.js"></script>
+  <script>
+    let { view } = plugdo;
+
+    $(document).ready(function () {
+      view.load();
+
+      if (window.location.hash.indexOf("/") != -1) {
+        view.components.handler.sleep(2000);
+      }
+
+      window.routing = new PlugdoRouting({
+        el: '#container',
+        elModal: "#plugdo-modal-content",
+        classSelected: 'menu-title-selected',
+        notFoundMessage: `<div class="row">
+                    <div class="col col-12 content text-center">
+                        <i class="fas fa-exclamation-circle not-found-icon"></i>
+                        <p>La página no fue encontrada!</p>
+                    </div>
+                </div>`
+      });
+
+      routing.register({ name: "products", page: "/product", classInParent: true });
+      routing.register({ name: "data", page: "/template-data", classInParent: false });
+      routing.register({ name: "banks", page: "/secure/banks", classInParent: true });
+      routing.register({ name: "profile", page: "/secure/profile", classInParent: true });
+
+
+      routing.register({
+        name: "products/template-data",
+        page: "/template-data",
+        postLoad: function () {
+          $("#plugdo-modal-component").show();
+        }
+      });
+
+      routing.modal();
+    });
+
+  </script>
+</body>
+
+</html>

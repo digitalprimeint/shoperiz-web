@@ -9,3 +9,15 @@ mvc.dependencies.dashboardDependencies = {
       ]
   }
 };
+
+mvc.dependencies.homeDependencies = {
+  "returnAll":  function () {
+      return [
+          {
+            title:" Soperiz",
+              name: "home",
+              country: "Panama"
+          }
+      ]
+  }
+};
