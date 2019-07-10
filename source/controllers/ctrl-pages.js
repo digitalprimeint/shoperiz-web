@@ -41,3 +41,12 @@ mvc.controller({
 }, "dashboardDependencies", function (req, dashboardDependencies) {
   return dashboardDependencies.returnAll();
 });
+
+mvc.controller({
+  name: "template",
+  action: "template",
+  path: "/template-1-shoperiz",
+  view: "./template/template-1-product.ejs"
+}, "dashboardDependencies", function (req, dashboardDependencies) {
+  return dashboardDependencies.returnAll();
+});

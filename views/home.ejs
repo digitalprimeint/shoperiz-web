@@ -45,7 +45,7 @@
         <a href="/#products"><i class="fas fa-boxes"></i> <br />Productos</a>
       </div>
       <div class="col col-sm-2 text-center menu-title">
-        <a href="/#banks"><i class="far fa-credit-card"></i> <br />Bancos</a>
+        <a href="/#banks"><i class="far fa-credit-card"></i> <br />Ventas</a>
       </div>
       <div class="col col-sm-2 text-center menu-title">
         <a href="/#profile"><i class="fas fa-address-card"></i> <br />Perfil</a>
@@ -88,12 +88,12 @@
       });
       routing.register({
         name: "banks",
-        page: "/secure/banks",
+        page: "/component/sales",
         classInParent: true
       });
       routing.register({
         name: "profile",
-        page: "/secure/profile",
+        page: "/component/profile",
         classInParent: true
       });
 
@@ -101,7 +101,7 @@
         name: "products/template-data",
         page: "/template-data",
         postLoad: function () {
-          $("#plugdo-modal-component").show();
+          $("#plugdo-modal-component").fadeIn();
         }
       });
 
@@ -109,16 +109,23 @@
         name: "products/option-template",
         page: "/option-template",
         postLoad: function () {
-          $("#plugdo-modal-component").show();
+          $("#plugdo-modal-component").fadeIn();
         }
       });
-
-
+      
       routing.register({
         name: "products/list-product",
         page: "/list-product",
         postLoad: function () {
-          $("#plugdo-modal-component").show();
+          $("#plugdo-modal-component").fadeIn();
+        }
+      });
+
+      routing.register({
+        name: "products/template-1-shoperiz",
+        page: "/template-1-shoperiz",
+        postLoad: function () {
+          $("#plugdo-modal-component").fadeIn();
         }
       });
 

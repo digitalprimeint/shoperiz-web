@@ -4,7 +4,8 @@
   "description": "Proyect Shoperiz",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "app":"pm2 start server.js"
   },
   "repository": {
     "type": "git",

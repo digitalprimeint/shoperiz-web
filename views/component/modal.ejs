@@ -1,15 +1,15 @@
-<!--<%- data %>-->
-<plugdo-modal>
+<!-- <%- data %> -->
+ <plugdo-modal>
   <template>
     <div id="plugdo-modal-component" class="container-fluid"
       style="background-color: #F4F6F9; height: 100%; position: fixed; z-index: 1; top: 0; left: 0;overflow: scroll;">
       <div class="row justify-content-md-center" style="height: 8%;">
-        <div class="col-lg-8 col-md-8 col-sm-12" style="background-color: #FFFFFF;">
+        <div class="col-lg-4 col-md-6 col-sm-12" style="background-color: #FFFFFF;">
           <div class="container-fluit">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <button id="plugdo-modal-button-close" type="button" class="btn btn-link float-right"
-                  style="color: #888888; font-weight: 500; font-size: 20px; text-decoration: none;"><img src="./assets/images/cancelar.svg" alt="" style="
+                  style="color: #888888; font-weight: 500; font-size: 20px; text-decoration: none;"><img src="./assets/icon/cancelar.svg" alt="" style="
                   width: 30px;
               "></button>
               </div>
@@ -18,14 +18,14 @@
         </div>
       </div>
       <div class="row justify-content-md-center" style="height: 92%;">
-        <div class="col-lg-8 col-md-8 col-sm-12" style="background-color: #FFFFFF;">
-
-          <div class="container-fluit">
+        <div class="col-lg-4 col-md-6 col-sm-12 " style="background-color: #FFFFFF;">
+          <div class="container" >
             <div class="row">
-              <div id="plugdo-modal-content" class="col-lg-12 col-md-12 col-sm-12"></div>
+              <div id="plugdo-modal-content" class="col-lg-12 ">
+                  <!-- <% include ../partials/scripts%> -->
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -49,5 +49,6 @@
     $("#plugdo-modal-component").hide();
     });
   </scripts>
-  <% include ../partials/scripts%>
 </plugdo-modal>
+
+<% include ../partials/scripts%>
